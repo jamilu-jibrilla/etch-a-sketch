@@ -1,0 +1,76 @@
+body {
+    background-color:  rgb(62, 68, 4);
+
+    /* background-color: rgba(22, 9, 9, 0.788); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+#wrapper {
+    display: grid;
+    width:600px;
+    height: 450px;
+    border: 30px solid rgb(182, 190, 110);
+    border-radius: 20px;
+    background-color:white;
+
+}
+.gridLines {
+    border: 0.5px solid rgba(0,0,0,0.1);
+}
+
+.square:hover {
+    background-color: red;
+}
+.topSelectors {
+    margin-top: 7em;
+    position: absolute;
+    left: 8em;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(182, 190, 110);
+    padding:2em;
+    border-radius: 3px;
+    height: 410px;
+}
+h1 {
+    font-size: 4em;
+    font-family: cursive;
+    margin-top: 0em;
+    margin-bottom: 0.4em;
+    color: gainsboro;
+
+}
+button, label{
+    color: gray;
+    background-color: white;
+    border: none;
+    padding:0.8em;
+    border-radius: 5px;
+    margin-bottom: 2em;
+    font-size: 0.8em;
+}
+
+
+
+button:hover {
+    cursor: grab;
+    outline: none;
+}
+
+input[type="color"] {
+	-webkit-appearance: none;
+	border: none;
+	width: 52px;
+    height: 32px;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+	padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+	border: none;
+}
