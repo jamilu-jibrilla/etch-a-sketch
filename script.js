@@ -1,35 +1,33 @@
 let container = document.getElementById("wrapper");
-let box = document.getElementById("wrapper").children;
 let size = document.getElementById("sizeRange");
+let allButtons = document.querySelector('.topSelectors')
+let box = document.getElementById("wrapper").children;
 let rainbowButton = document.getElementById("rainbow");
 let userColor = document.getElementById("color");
 let allColor = document.getElementById("allCol");
 let cleaner = document.getElementById("cleaner");
 let resetButton = document.querySelector("#reset");
 let toggleGrid = document.querySelector("#gridLine");
-// let slider = document.querySelector(".slider")
 
 
 
 function createGrid() {
     container.innerHTML = ""
-    
     let gridval = document.getElementById("gridval");
-    function aa() {
-        return size.value
-    }
-    gridval.innerHTML = aa()
+    let gridSize = size.value
+    let gridBoxes = gridSize * gridSize;
+    gridval.innerHTML = gridSize;
+    container.style.display = "grid"
+    container.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`
+    container.style.gridTemplateRows = `repeat(${gridSize},1fr)`
 
-    let gridCells = size.value;
-    let gridPopulation = gridCells * gridCells;
-    container.style.gridTemplateColumns = `repeat(${gridCells}, 1fr)`
-    container.style.gridTemplateRows = `repeat(${gridCells},1fr)`
-
-    for(let i = 0; i < gridPopulation; i++) {
+    for(let i = 0; i < gridBoxes; i++) {
         let cell = document.createElement("div");
         cell.classList.add("square")
+        let opacity = .2
         cell.addEventListener ("mouseenter", function(){
-            cell.style.background = "black"
+            cell.style.background = "rgba(0,0,0,"+opacity+")";
+            opacity +=.2
         })
         container.appendChild(cell);
     }
@@ -62,6 +60,7 @@ function randomColors() {
         return Math.floor(Math.random() * 255)
     }
 
+
     function blue() {
         return Math.floor(Math.random() * 255)
     }
@@ -93,15 +92,14 @@ function reset() {
 }
 function toggleLine() {
     for(let item of box) {
-        item.classList.remove('square')
         item.classList.toggle("gridLines")
     }
 }
 
 
-size.addEventListener("mouseup", createGrid)
+size.addEventListener("click", createGrid)
 rainbowButton.addEventListener("click", rainbowColors);
-cleaner.addEventListener("mousedown", eraser);
+cleaner.addEventListener("click", eraser);
 userColor.addEventListener("click", colorChoice);
 allColor.addEventListener("click", randomColors);
 resetButton.addEventListener("click", reset);

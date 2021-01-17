@@ -1,17 +1,13 @@
 body {
     background-color:  rgb(62, 68, 4);
-
-    /* background-color: rgba(22, 9, 9, 0.788); */
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
     font-family: monospace;
     box-sizing: border-box;
 }
 #wrapper {
-    display: grid;
     width:600px;
     height: 450px;
     border: 30px solid rgb(182, 190, 110);
@@ -26,24 +22,26 @@ body {
 .square:hover {
     background-color: red;
 }
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .topSelectors {
-    margin-top: 7em;
-    position: absolute;
-    left: 8em;
     display: flex;
     flex-direction: column;
     background-color: rgb(182, 190, 110);
-    padding:2em;
+    padding: 2em;
+    margin-right: 4em;
     border-radius: 3px;
     height: 410px;
 }
 h1 {
     font-size: 4em;
+    margin-left: 2.4em;
     font-family: cursive;
-    margin-top: 0em;
     margin-bottom: 0.4em;
     color: gainsboro;
-
 }
 button, label{
     color: gray;
@@ -58,7 +56,7 @@ button, label{
 
 
 button:hover {
-    cursor: grab;
+    cursor: pointer;
     outline: none;
 }
 
@@ -73,4 +71,38 @@ input[type="color"]::-webkit-color-swatch-wrapper {
 }
 input[type="color"]::-webkit-color-swatch {
 	border: none;
+}
+@media screen and (max-width: 500px) {
+    body {
+        margin: 1em;
+    }
+    #wrapper {
+        border: 10px solid rgb(182, 190, 110);
+        width: 80vw;
+    } 
+    .flex {
+        display: flex;
+        flex-direction: column;
+    }
+    .topSelectors {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        margin:0px 40px;
+        height: auto;
+        width: 70vw;
+        padding: 10px;
+        margin-bottom:15px;
+    }
+    button, label{
+        border-radius: 5px;
+        padding: .3em 0.6em;
+        margin: 1em;
+        font-size: 0.8em;
+    }
+    h1 {
+        font-size: 2.5em;
+        margin:10px 5px;
+        text-align: center;
+    }
 }
