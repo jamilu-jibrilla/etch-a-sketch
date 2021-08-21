@@ -1,3 +1,3 @@
 # etch-a-sketch
-
-This project is from the "Odin's project Website". 
+This is a sketch app
+link: https://jamilu-jibrilla.github.io/etch-a-sketch/
